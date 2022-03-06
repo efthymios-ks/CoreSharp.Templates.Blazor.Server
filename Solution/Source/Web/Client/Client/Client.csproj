@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+	<PropertyGroup Label="Package">
+		<TargetFramework>net5.0</TargetFramework>
+		<AssemblyName>CoreSharp.CleanStructure.Blazor.Client</AssemblyName>
+		<RootNamespace>CoreSharp.CleanStructure.Blazor.Client</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup Label="Package references">
+		<PackageReference Include="LibSassBuilder" Version="1.6.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.15" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.15" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.15" />
+	</ItemGroup>
+
+	<ItemGroup Label="Project references">
+		<ProjectReference Include="..\..\..\Shared\Shared\Shared.csproj" />
+		<ProjectReference Include="..\Client.Infrastructure\Client.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Label="Assets">
+		<EmbeddedResource Include="Resources\appsettings.Development.json" />
+		<EmbeddedResource Include="Resources\appsettings.json" />
+	</ItemGroup>
+
+</Project>

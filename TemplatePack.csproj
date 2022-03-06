@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Label="Package">
+		<PackageType>Template</PackageType>
+		<PackageId>CoreSharp.CleanStructure.Blazor</PackageId>
+		<TargetFramework>net5.0</TargetFramework>
+		<PackageVersion>5.0.0</PackageVersion>
+
+		<Title>Blazor Clean Structure Solution</Title>
+		<Authors>Efthymios Koktidis</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/efthymios-ks/CoreSharp.CleanStructure.Blazor</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/efthymios-ks/CoreSharp.CleanStructure.Blazor</RepositoryUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<NoWarn>$(NoWarn);NU5128</NoWarn>
+		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+	</PropertyGroup>
+ 
+	<ItemGroup Label="Linking">
+		<None Include="icon.png" Pack="true" PackagePath="\"/>
+		<Content Include="Solution\**\*" Exclude="Solution\**\.vs\**;Solution\**\bin\**;Solution\**\obj\**" />
+		<Compile Remove="**\*" />
+	</ItemGroup>
+</Project>

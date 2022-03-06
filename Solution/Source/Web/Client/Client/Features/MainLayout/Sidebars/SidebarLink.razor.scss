@@ -1,0 +1,59 @@
+﻿.sidebar__link {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-decoration: none;
+    user-select: none;
+    color: #333333;
+    letter-spacing: 0.24px;
+    padding: 0px 25px;
+    border: 2px solid transparent;
+    border-left-width: 4px;
+
+    &__icon {
+        font-family: 'Material Icons';
+        font-size: 1.5em;
+        width: 2em;
+
+        &:after {
+            content: attr(data-icon);
+        }
+    }
+
+    $this: &;
+    $hover-bg-color: #E7E7E7;
+
+    &:hover:not(#{$this}--active) {
+        animation: hover-animation 0.1s forwards;
+
+        @keyframes hover-animation {
+            to {
+                background-color: $hover-bg-color;
+            }
+        }
+    }
+
+    @mixin focused-style {
+        background-color: $hover-bg-color;
+        border-color: #B7B7B7;
+    }
+
+    &:focus {
+        @include focused-style;
+    }
+
+    &:focus-visible {
+        @include focused-style;
+    }
+
+    @mixin active-style {
+        background-color: #EAF1E7;
+        font-weight: bold;
+        border-left-color: rgba(#64BE3C, 1);
+    }
+
+    &--active {
+        @include active-style;
+    }
+}

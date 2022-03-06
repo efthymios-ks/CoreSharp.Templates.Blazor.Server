@@ -1,0 +1,85 @@
+﻿@import 'SidebarLink.razor.scss';
+
+// Override link
+.sidebar__link {
+    @mixin slide-style {
+        cursor: pointer;
+        display: flex;
+    }
+
+    &__slide-in {
+        @include slide-style;
+        justify-content: space-between;
+    }
+
+    &__slide-out {
+        @include slide-style;
+        justify-content: start;
+    }
+}
+
+.sidebar__group {
+    @mixin animate($animation-name) {
+        animation: $animation-name 0.5s ease-in-out forwards;
+    }
+
+    &__slide-in {
+        &--right {
+            @include animate(slide-in--right);
+
+            @keyframes slide-in--right {
+                0% {
+                    transform: translateX(-100%);
+                }
+
+                100% {
+                    transform: translateX(0%);
+                }
+            }
+        }
+
+        &--left {
+            @keyframes slide-in--left {
+                0% {
+                    transform: translateX(100%);
+                }
+
+                100% {
+                    transform: translateX(0%);
+                }
+            }
+
+            @include animate(slide-in--left);
+        }
+    }
+
+    &__slide-out {
+        &--right {
+            @include animate(slide-out--right);
+
+            @keyframes slide-out--right {
+                0% {
+                    transform: translateX(0%);
+                }
+
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+        }
+
+        &--left {
+            @include animate(slide-out--left);
+
+            @keyframes slide-out--left {
+                0% {
+                    transform: translateX(0%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+        }
+    }
+}

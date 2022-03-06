@@ -1,0 +1,34 @@
+﻿<div class="sidebar__group">
+    @* Current content *@
+    <div class="@_currentGroupCs">
+        @* Next group link *@
+        @if (ShouldShowChildGroupLink)
+        {
+            <a class="sidebar__link sidebar__link__slide-in"
+               @onclick="OnSlideGroupInLinkClicked">
+                @SlideGroupLabel
+
+                <span class="sidebar__link__icon"
+                      data-icon="arrow_forward" />
+            </a>
+        }
+
+        @ChildContent
+    </div>
+
+    @* Slide group content *@
+    <div class="@_slideGroupContentCss">
+        <a class="sidebar__link sidebar__link__slide-out"
+           @onclick="OnSlideGroupOutLinkClicked">
+            <span class="sidebar__link__icon"
+                  data-icon="arrow_backward" />
+
+            @PreviousText
+        </a>
+
+        <CascadingValue Name="@nameof(SidebarLinkGroup)"
+                        Value="this">
+            @SlideGroup
+        </CascadingValue>
+    </div>
+</div>

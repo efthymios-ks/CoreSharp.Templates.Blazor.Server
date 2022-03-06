@@ -1,0 +1,67 @@
+﻿<div @ref="_offcanvasReference"
+     class="offcanvas offcanvas-start app-sidebar">
+    @* Header *@
+    <div class="offcanvas-header">
+        @* Title *@
+        <h5 class="offcanvas-title"
+            id="offcanvasWithBackdropLabel">
+            Offcanvas with backdrop title
+        </h5>
+
+        @* Close *@
+        <button type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close">
+        </button>
+    </div>
+
+    @* Body *@
+    <div class="offcanvas-body">
+        @* Home *@
+        <SidebarLinkGroup Id="s_1"
+                          SlideGroupLabel="Apps">
+            <ChildContent>
+                @* Divider *@
+                <hr />
+
+                @* Dashboard *@
+                <SidebarLink Link=""
+                             Text="Dashboard"
+                             Icon="home" />
+
+                @* Function 1 *@
+                <SidebarLink Link="function_1"
+                             Text="Function 1"
+                             Icon="tag" />
+
+                @* Function 2 *@
+                <SidebarLink Link="function_2"
+                             Text="Function 2"
+                             Icon="star_border" />
+
+                @* Function X *@
+                <SidebarLink Link="function_x"
+                             Text="Function X"
+                             Icon="close" />
+            </ChildContent>
+
+            <SlideGroup>
+                @* Apps *@
+                <SidebarLinkGroup Id="s_2">
+                    <ChildContent>
+                        @* Social *@
+                        <SidebarLink Link="app_1"
+                                     Text="App 1"
+                                     Icon="apps" />
+
+                        @* Cart *@
+                        <SidebarLink Link="app_2"
+                                     Text="App 2"
+                                     Icon="apps" />
+                    </ChildContent>
+                </SidebarLinkGroup>
+            </SlideGroup>
+        </SidebarLinkGroup>
+    </div>
+</div>
