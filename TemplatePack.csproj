@@ -2,15 +2,16 @@
 
 	<PropertyGroup Label="Package">
 		<PackageType>Template</PackageType>
-		<PackageId>CoreSharp.CleanStructure.Blazor</PackageId>
+		<PackageId>CoreSharp.Templates.Blazor.Server</PackageId>
 		<TargetFramework>net5.0</TargetFramework>
-		<PackageVersion>5.0.0</PackageVersion>
+		<PackageVersion>5.0.2</PackageVersion>
+		<PackageReleaseNotes>-Solution restructure.</PackageReleaseNotes>
 
-		<Title>Blazor Clean Structure Solution</Title>
+		<Title>Blazor Server Clean Architecture Solution</Title>
 		<Authors>Efthymios Koktidis</Authors>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/efthymios-ks/CoreSharp.CleanStructure.Blazor</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/efthymios-ks/CoreSharp.CleanStructure.Blazor</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/efthymios-ks/CoreSharp.Templates.Blazor.Server</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/efthymios-ks/CoreSharp.Templates.Blazor.Server</RepositoryUrl>
 		<PackageIcon>icon.png</PackageIcon>
 		
 		<IncludeContentInPack>true</IncludeContentInPack>

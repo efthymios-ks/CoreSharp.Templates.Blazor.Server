@@ -10,15 +10,15 @@ Open PowerShell in `TemplatePack.csproj` folder.
 - Local removal.  
   `dotnet new -u` or  
   `dotnet new -u .` or  
-  `dotnet new --uninstall CoreSharp.CleanStructure.Blazor`
+  `dotnet new --uninstall CoreSharp.Templates.Blazor.Server`
 - Create nuget package.  
   `dotnet pack .\TemplatePack.csproj -o .\Artifacts` 
 - Test nuget package.  
-  `dotnet new -i .\Artifacts\CoreSharp.CleanStructure.Blazor.5.0.0.nupkg` 
+  `dotnet new -i .\Artifacts\CoreSharp.Templates.Blazor.Server.5.0.0.nupkg` 
 - Install nuget package. 
-  `dotnet new --install CoreSharp.CleanStructure.Blazor` 
+  `dotnet new --install CoreSharp.Templates.Blazor.Server` 
 - Uninstall nuget package.
-  `dotnet new --install CoreSharp.CleanStructure.Blazor` 
+  `dotnet new --uninstall CoreSharp.Templates.Blazor.Server` 
 - Use nuget package. 
-  `dotnet new clean-blazor --name {YourProjectName}` 
+  `dotnet new clean-blazor-server --name {YourProjectName}` 
 --- 

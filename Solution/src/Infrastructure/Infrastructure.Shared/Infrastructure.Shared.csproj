@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup Label="Package">
+		<TargetFramework>net5.0</TargetFramework>
+		<RootNamespace>CoreSharp.Templates.Blazor.Server.Infrastructure.Shared</RootNamespace>
+		<AssemblyName>CoreSharp.Templates.Blazor.Server.Infrastructure.Shared</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup Label="Project references">
+		<ProjectReference Include="..\..\Core\Application\Application.csproj" />
+	</ItemGroup>
+
+</Project>

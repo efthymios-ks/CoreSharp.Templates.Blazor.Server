@@ -1,0 +1,11 @@
+﻿.material-icon {
+    user-select: none;
+    font-family: 'Material Icons' !important;
+}
+
+.material-icon[data-icon] {
+    &:after {
+        user-select: none;
+        content: attr(data-icon);
+    }
+}

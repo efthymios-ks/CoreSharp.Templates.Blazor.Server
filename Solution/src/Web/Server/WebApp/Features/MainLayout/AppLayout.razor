@@ -1,0 +1,15 @@
+﻿@inherits LayoutComponentBase
+@using WebApp.Features.MainLayout.Sidebars
+
+<div id="app-layout"
+     class="page d-md-flex flex-column min-vh-100">
+    <Sidebar @ref="_sidebar" />
+
+    <Header SidebarToggleClicked="OnSidebarToggleClickedAsync" />
+
+    <Content>
+        @Body
+    </Content>
+
+    <Footer />
+</div>

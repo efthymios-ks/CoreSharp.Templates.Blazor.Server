@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup Label="Package">
+		<AssemblyName>CoreSharp.Templates.Blazor.Server.WebApp.UI</AssemblyName>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup Label="Package references">
+		<PackageReference Include="CoreSharp" Version="5.1.1" />
+		<PackageReference Include="CoreSharp.Blazor" Version="5.0.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.17" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+</Project>

@@ -6,18 +6,18 @@
     "Web",
     "API",
     "Blazor",
-    "Wasm",
+    "Server",
     "Clean Architecture"
   ],
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "identity": "CoreSharp.CleanStructure.Blazor",
-  "name": "Blazor Clean Structure Solution",
-  "shortName": "clean-blazor",
-  "defaultName": "CleanBlazorApp",
-  "sourceName": "CoreSharp.CleanStructure.Blazor",
+  "identity": "CoreSharp.Templates.Blazor.Server",
+  "name": "Blazor Server Clean Architecture Solution",
+  "shortName": "clean-blazor-server",
+  "defaultName": "CleanBlazorServerpp",
+  "sourceName": "CoreSharp.Templates.Blazor.Server",
   "preferNameDirectory": true,
   "sources": [
     {
