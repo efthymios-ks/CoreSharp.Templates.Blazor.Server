@@ -7,7 +7,7 @@
 
 	<ItemGroup Label="Package references">
 		<PackageReference Include="CoreSharp" Version="5.1.1" />
-		<PackageReference Include="CoreSharp.Blazor" Version="5.0.5" />
+		<PackageReference Include="CoreSharp.Blazor" Version="5.1.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.17" />
 	</ItemGroup>
 

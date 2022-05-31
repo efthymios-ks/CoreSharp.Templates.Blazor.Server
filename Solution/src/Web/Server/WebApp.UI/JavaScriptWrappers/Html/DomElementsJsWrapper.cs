@@ -25,27 +25,27 @@ namespace WebApp.UI.JavaScriptWrappers.Html
         {
             var args = new object[] { elementReference }.Concat(keys)
                                                         .ToArray();
-            return await JSModule.InvokeAsync<IDictionary<string, string>>("getProperties", args);
+            return await InvokeAsync<IDictionary<string, string>>("getProperties", args);
         }
 
         public async Task<string> GetRawHtml(string elementId)
         {
             if (string.IsNullOrEmpty(elementId))
                 throw new ArgumentNullException(nameof(elementId));
-            return await JSModule.InvokeAsync<string>("getRawHtmlById", elementId);
+            return await InvokeAsync<string>("getRawHtmlById", elementId);
         }
 
         public async Task<string> GetRawHtml(ElementReference elementReference)
-            => await JSModule.InvokeAsync<string>("getRawHtml", elementReference);
+            => await InvokeAsync<string>("getRawHtml", elementReference);
 
         public async Task ScrollIntoViewAsync(string elementId)
         {
             if (string.IsNullOrEmpty(elementId))
                 throw new ArgumentNullException(nameof(elementId));
-            await JSModule.InvokeVoidAsync("scrollIntoViewById", elementId);
+            await InvokeAsync("scrollIntoViewById", elementId);
         }
 
         public async Task ScrollIntoViewAsync(ElementReference elementReference)
-            => await JSModule.InvokeVoidAsync("scrollIntoView", elementReference);
+            => await InvokeAsync("scrollIntoView", elementReference);
     }
 }

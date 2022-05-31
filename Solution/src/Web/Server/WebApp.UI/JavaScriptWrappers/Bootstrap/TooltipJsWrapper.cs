@@ -19,9 +19,9 @@ namespace WebApp.UI.JavaScriptWrappers.Bootstrap
 
         //Methods
         public async Task EnableAsync(ElementReference elementReference)
-            => await JSModule.InvokeVoidAsync("enable", elementReference);
+            => await InvokeAsync("enable", elementReference);
 
         public async Task DisposeAsync(ElementReference elementReference)
-            => await JSModule.InvokeVoidAsync("dispose", elementReference);
+            => await InvokeAsync("dispose", elementReference);
     }
 }

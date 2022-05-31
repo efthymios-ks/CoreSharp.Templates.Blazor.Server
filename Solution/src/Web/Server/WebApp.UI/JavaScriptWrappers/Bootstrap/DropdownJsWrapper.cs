@@ -19,9 +19,9 @@ namespace WebApp.UI.JavaScriptWrappers.Bootstrap
 
         //Methods 
         public async Task ShowAsync(ElementReference dropdownToggleReference)
-            => await JSModule.InvokeVoidAsync("show", dropdownToggleReference);
+            => await InvokeAsync("show", dropdownToggleReference);
 
         public async Task HideAsync(ElementReference dropdownToggleReference)
-            => await JSModule.InvokeVoidAsync("hide", dropdownToggleReference);
+            => await InvokeAsync("hide", dropdownToggleReference);
     }
 }

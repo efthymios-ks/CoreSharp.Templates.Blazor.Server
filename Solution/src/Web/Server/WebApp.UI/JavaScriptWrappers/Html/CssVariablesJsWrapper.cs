@@ -18,10 +18,10 @@ namespace WebApp.UI.JavaScriptWrappers.Html
 
         //Methods
         public async Task<string> GetAsync(string key)
-            => await JSModule.InvokeAsync<string>("get", key);
+            => await InvokeAsync<string>("get", key);
 
         public async Task<string> SetAsync(string key, string value)
-            => await JSModule.InvokeAsync<string>("set", key, value);
+            => await InvokeAsync<string>("set", key, value);
 
         public async Task<string> SetAsync(string key, object value)
             => await SetAsync(key, $"{value}");

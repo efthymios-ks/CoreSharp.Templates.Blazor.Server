@@ -1,64 +1,40 @@
-﻿using CoreSharp.Delegates;
-using CoreSharp.DependencyInjection.Interfaces;
+﻿using CoreSharp.DependencyInjection.Interfaces;
 using CoreSharp.Extensions;
 using CoreSharp.Templates.Blazor.Server.Application.Services.Contracts;
-using Microsoft.AspNetCore.Components.Authorization;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
+//TODO: Fix injection and remove pragmas.
+#pragma warning disable IDE0051 // Remove unused private members
+#pragma warning disable RCS1213 // Remove unused member declaration.
 namespace CoreSharp.Templates.Blazor.Server.Infrastructure.Services
 {
     public class CurrentUserService : ICurrentUserService, IScoped<ICurrentUserService>
     {
-        //Fields
-        private readonly AuthenticationStateProvider _authenticationStateProvider;
-
         //Constructors
-        public CurrentUserService(AuthenticationStateProvider authenticationStateProvider)
-        {
-            _authenticationStateProvider = authenticationStateProvider;
-            _authenticationStateProvider.AuthenticationStateChanged += async _ => await OnAuthenticationStateChangedAsync();
-        }
+        //public ServerCurrentUserService(IHttpContextAccessor httpContextAccessor)
+        //{
+        //    var claimsPrincipal = httpContextAccessor?.HttpContext?.User;
 
-        //Events
-        public event AsyncDelegate AuthenticationStateChanged;
+        //    //Extract information 
+        //    IsAuthenticated = GetIsAuthenticated(claimsPrincipal);
+        //    Id = GetId(claimsPrincipal);
+        //    Name = GetName(claimsPrincipal);
+        //    Email = GetEmail(claimsPrincipal);
+        //    Claims = GetClaims(claimsPrincipal);
+        //}
 
         //Properties
-        public bool IsAuthenticated { get; private set; }
-        public string Id { get; private set; }
-        public string Name { get; private set; }
-        public string Email { get; private set; }
-        public string PhotoUrl { get; private set; }
-        public IReadOnlyDictionary<string, string> Claims { get; private set; } = ImmutableDictionary<string, string>.Empty;
+        public bool IsAuthenticated { get; }
+        public string Id { get; }
+        public string Name { get; }
+        public string Email { get; }
+        public IReadOnlyDictionary<string, string> Claims { get; } = ImmutableDictionary<string, string>.Empty;
 
-        //Methods
-        private async Task OnAuthenticationStateChangedAsync()
-        {
-            if (AuthenticationStateChanged is null)
-                return;
-
-            await AuthenticationStateChanged.InvokeAsync();
-        }
-
-        public async Task CheckStateAsync()
-        {
-            //Get authentication state 
-            var state = await _authenticationStateProvider.GetAuthenticationStateAsync();
-            var claimsPrincipal = state?.User;
-
-            //Extract information 
-            IsAuthenticated = GetIsAuthenticated(claimsPrincipal);
-            Id = GetId(claimsPrincipal);
-            Name = GetName(claimsPrincipal);
-            Email = GetEmail(claimsPrincipal);
-            PhotoUrl = GetPhotoUrl(claimsPrincipal);
-            Claims = GetClaims(claimsPrincipal);
-        }
-
+        //Methods 
         private static bool GetIsAuthenticated(ClaimsPrincipal claimsPrincipal)
             => claimsPrincipal?.Identity?.IsAuthenticated is true;
 
@@ -71,9 +47,6 @@ namespace CoreSharp.Templates.Blazor.Server.Infrastructure.Services
         private static string GetEmail(ClaimsPrincipal claimsPrincipal)
             => GetClaimValue(claimsPrincipal, ClaimTypes.Email);
 
-        private static string GetPhotoUrl(ClaimsPrincipal claimsPrincipal)
-            => GetClaimValue(claimsPrincipal, "picture");
-
         private static string GetClaimValue(ClaimsPrincipal claimsPrincipal, string claimType)
             => claimsPrincipal?.FindFirst(claimType)?.Value;
 
@@ -84,3 +57,5 @@ namespace CoreSharp.Templates.Blazor.Server.Infrastructure.Services
         }
     }
 }
+#pragma warning restore IDE0051 // Remove unused private members
+#pragma warning restore RCS1213 // Remove unused member declaration.

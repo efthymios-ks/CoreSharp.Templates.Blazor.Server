@@ -19,12 +19,12 @@ namespace WebApp.UI.JavaScriptWrappers.Bootstrap
 
         //Methods
         public async Task ShowAsync(ElementReference elementReference)
-            => await JSModule.InvokeVoidAsync("show", elementReference);
+            => await InvokeAsync("show", elementReference);
 
         public async Task HideAsync(ElementReference elementReference)
-            => await JSModule.InvokeVoidAsync("hide", elementReference);
+            => await InvokeAsync("hide", elementReference);
 
         public async Task ToggleAsync(ElementReference elementReference)
-            => await JSModule.InvokeVoidAsync("toggle", elementReference);
+            => await InvokeAsync("toggle", elementReference);
     }
 }
