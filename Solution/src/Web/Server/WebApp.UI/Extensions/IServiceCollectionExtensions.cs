@@ -1,4 +1,5 @@
-﻿using CoreSharp.Blazor.JavaScriptWrappers.Common;
+﻿using CoreSharp.Blazor.Extensions;
+using CoreSharp.Blazor.JavaScriptWrappers.Common;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace WebApp.UI.Extensions
             _ = services ?? throw new ArgumentNullException(nameof(services));
 
             services.AddJavaScriptWrappers();
+            services.AddCoreSharpBlazor();
 
             return services;
         }

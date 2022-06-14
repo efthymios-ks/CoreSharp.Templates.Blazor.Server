@@ -6,13 +6,17 @@
 	</PropertyGroup>
 
 	<ItemGroup Label="Package references">
-		<PackageReference Include="CoreSharp" Version="5.1.1" />
-		<PackageReference Include="CoreSharp.Blazor" Version="5.1.1" />
+		<PackageReference Include="CoreSharp" Version="5.2.1" />
+		<PackageReference Include="CoreSharp.Blazor" Version="5.1.7" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.17" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="wwwroot\" />
 	</ItemGroup>
 
 </Project>

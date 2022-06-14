@@ -3,9 +3,9 @@
     font-family: 'Material Icons' !important;
 }
 
-.material-icon[data-icon] {
-    &:after {
+.material-icon[e-icon] {
+    &::after {
         user-select: none;
-        content: attr(data-icon);
+        content: attr(e-icon);
     }
 }

@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using CoreSharp.Blazor.JavaScriptWrappers.Bootstrap;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Threading.Tasks;
-using WebApp.UI.JavaScriptWrappers.Bootstrap;
 
 namespace WebApp.Features.MainLayout.Sidebars
 {

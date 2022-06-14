@@ -17,7 +17,7 @@
         width: 2em;
 
         &:after {
-            content: attr(data-icon);
+            content: attr(e-icon);
         }
     }
 

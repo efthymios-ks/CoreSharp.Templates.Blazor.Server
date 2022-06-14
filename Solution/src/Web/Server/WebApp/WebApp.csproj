@@ -6,7 +6,7 @@
 	</PropertyGroup>
 
 	<ItemGroup Label="Package references">
-		<PackageReference Include="CoreSharp.AspNetCore" Version="5.1.0" />
+		<PackageReference Include="CoreSharp.AspNetCore" Version="5.1.2" />
 		<PackageReference Include="LibSassBuilder" Version="1.6.4" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
 		  <PrivateAssets>all</PrivateAssets>

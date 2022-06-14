@@ -4,6 +4,7 @@ namespace CoreSharp.Templates.Blazor.Server.Application.Services.Contracts
 {
     public interface ICurrentUserService
     {
+        //Properties
         bool IsAuthenticated { get; }
         string Id { get; }
         string Name { get; }

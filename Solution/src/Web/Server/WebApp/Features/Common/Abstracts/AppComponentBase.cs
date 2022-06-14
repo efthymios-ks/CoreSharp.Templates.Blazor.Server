@@ -12,6 +12,6 @@ namespace WebApp.Features.Common.Abstracts
         protected IMediator Mediator { get; set; }
 
         [Inject]
-        protected ICurrentUserService CurrentUserService { get; set; }
+        protected IServerCurrentUserService CurrentUserService { get; set; }
     }
 }

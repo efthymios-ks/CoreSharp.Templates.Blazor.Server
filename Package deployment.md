@@ -12,7 +12,7 @@ Open PowerShell in `TemplatePack.csproj` folder.
   `dotnet new -u .` or  
   `dotnet new --uninstall CoreSharp.Templates.Blazor.Server`
 - Create nuget package.  
-  `dotnet pack .\TemplatePack.csproj -o .\Artifacts` 
+  `dotnet pack -c Release .\TemplatePack.csproj -o .\artifacts` 
 - Test nuget package.  
   `dotnet new -i .\Artifacts\CoreSharp.Templates.Blazor.Server.5.0.0.nupkg` 
 - Install nuget package. 
