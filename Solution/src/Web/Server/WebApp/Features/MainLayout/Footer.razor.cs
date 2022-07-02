@@ -1,6 +1,5 @@
-﻿namespace WebApp.Features.MainLayout
+﻿namespace WebApp.Features.MainLayout;
+
+public partial class Footer
 {
-    public partial class Footer
-    {
-    }
 }

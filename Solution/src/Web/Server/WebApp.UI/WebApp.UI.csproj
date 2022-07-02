@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup Label="Package">
+		<TargetFramework>net6.0</TargetFramework>
 		<AssemblyName>CoreSharp.Templates.Blazor.Server.WebApp.UI</AssemblyName>
-		<TargetFramework>net5.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup Label="Package references">
-		<PackageReference Include="CoreSharp" Version="5.2.1" />
-		<PackageReference Include="CoreSharp.Blazor" Version="5.1.7" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.17" />
+		<PackageReference Include="CoreSharp" Version="6.0.0" />
+		<PackageReference Include="CoreSharp.Blazor" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.6" />
 	</ItemGroup>
 
 	<ItemGroup>

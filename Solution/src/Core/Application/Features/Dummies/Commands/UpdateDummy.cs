@@ -8,48 +8,47 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CoreSharp.Templates.Blazor.Server.Application.Features.Dummies.Commands
-{
-    public class UpdateDummy : IRequest<DummyDto>
-    {
-        //Constructors
-        public UpdateDummy(DummyDto dummyDto)
-            => DummyDto = dummyDto ?? throw new ArgumentNullException(nameof(dummyDto));
+namespace CoreSharp.Templates.Blazor.Server.Application.Features.Dummies.Commands;
 
-        //Properties
-        public DummyDto DummyDto { get; }
+public class UpdateDummy : IRequest<DummyDto>
+{
+    //Constructors
+    public UpdateDummy(DummyDto dummyDto)
+        => DummyDto = dummyDto ?? throw new ArgumentNullException(nameof(dummyDto));
+
+    //Properties
+    public DummyDto DummyDto { get; }
+}
+
+internal class UpdateDummyHandler : IRequestHandler<UpdateDummy, DummyDto>
+{
+    //Fields
+    private readonly IAppUnitOfWork _unitOfWork;
+    private readonly IMapper _mapper;
+
+    //Constructors
+    public UpdateDummyHandler(IAppUnitOfWork unitOfWork, IMapper mapper)
+    {
+        _unitOfWork = unitOfWork;
+        _mapper = mapper;
     }
 
-    internal class UpdateDummyHandler : IRequestHandler<UpdateDummy, DummyDto>
+    //Methods
+    public async Task<DummyDto> Handle(UpdateDummy request, CancellationToken cancellationToken)
     {
-        //Fields
-        private readonly IAppUnitOfWork _unitOfWork;
-        private readonly IMapper _mapper;
+        var repository = _unitOfWork.DummyRepository;
+        var dummyDto = request.DummyDto;
 
-        //Constructors
-        public UpdateDummyHandler(IAppUnitOfWork unitOfWork, IMapper mapper)
-        {
-            _unitOfWork = unitOfWork;
-            _mapper = mapper;
-        }
+        //Get existing dummy 
+        var dummyToUpdate = await repository.GetAsync(dummyDto.Id, cancellationToken: cancellationToken);
+        _ = dummyToUpdate ?? throw EntityNotFoundException.Create<Dummy, Guid>(e => e.Id, dummyDto.Id);
 
-        //Methods
-        public async Task<DummyDto> Handle(UpdateDummy request, CancellationToken cancellationToken)
-        {
-            var repository = _unitOfWork.DummyRepository;
-            var dummyDto = request.DummyDto;
+        //Update 
+        _mapper.Map(dummyDto, dummyToUpdate);
+        var updatedDummy = await repository.UpdateAsync(dummyToUpdate, cancellationToken);
+        await _unitOfWork.CommitAsync(cancellationToken);
 
-            //Get existing dummy 
-            var dummyToUpdate = await repository.GetAsync(dummyDto.Id, cancellationToken: cancellationToken);
-            _ = dummyToUpdate ?? throw EntityNotFoundException.Create<Dummy, Guid>(e => e.Id, dummyDto.Id);
-
-            //Update 
-            _mapper.Map(dummyDto, dummyToUpdate);
-            var updatedDummy = await repository.UpdateAsync(dummyToUpdate, cancellationToken);
-            await _unitOfWork.CommitAsync(cancellationToken);
-
-            //Return
-            return _mapper.Map<DummyDto>(updatedDummy);
-        }
+        //Return
+        return _mapper.Map<DummyDto>(updatedDummy);
     }
 }

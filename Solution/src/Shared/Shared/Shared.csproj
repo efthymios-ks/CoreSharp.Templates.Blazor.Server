@@ -1,25 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup Label="Package">
-		<TargetFramework>net5.0</TargetFramework>
+		<TargetFramework>net6.0</TargetFramework>
 		<RootNamespace>CoreSharp.Templates.Blazor.Server.Shared</RootNamespace>
 		<AssemblyName>CoreSharp.Templates.Blazor.Server.Shared</AssemblyName>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <NoWarn>1573;1591;1701;1702;1723;1194;</NoWarn>
+		<NoWarn>1573;1591;1701;1702;1723;1194;</NoWarn>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <NoWarn>1573;1591;1701;1702;1723;1194;</NoWarn>
+		<NoWarn>1573;1591;1701;1702;1723;1194;</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup Label="Package references">
 		<PackageReference Include="Ben.Demystifier" Version="0.4.1" />
-		<PackageReference Include="CoreSharp" Version="5.2.1" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
-		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.17" />
-		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+		<PackageReference Include="CoreSharp" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Net.Http.Headers" Version="2.2.8" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>

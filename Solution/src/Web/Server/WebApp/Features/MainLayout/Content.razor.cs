@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace WebApp.Features.MainLayout
+namespace WebApp.Features.MainLayout;
+
+public partial class Content
 {
-    public partial class Content
-    {
-        //Properties
-        [Parameter]
-        public RenderFragment ChildContent { get; set; }
-    }
+    //Properties
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
 }

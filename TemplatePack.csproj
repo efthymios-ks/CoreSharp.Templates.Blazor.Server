@@ -3,9 +3,9 @@
 	<PropertyGroup Label="Package">
 		<PackageType>Template</PackageType>
 		<PackageId>CoreSharp.Templates.Blazor.Server</PackageId>
-		<TargetFramework>net5.0</TargetFramework>
-		<PackageVersion>5.0.2</PackageVersion>
-		<PackageReleaseNotes>-Solution restructure.</PackageReleaseNotes>
+		<TargetFramework>net6.0</TargetFramework>
+		<PackageVersion>6.0.0</PackageVersion>
+		<PackageReleaseNotes>-Migrated to .NET6.</PackageReleaseNotes>
 
 		<Title>Blazor Server Clean Architecture Solution</Title>
 		<Authors>Efthymios Koktidis</Authors>

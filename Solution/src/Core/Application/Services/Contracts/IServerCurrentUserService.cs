@@ -1,6 +1,5 @@
-﻿namespace CoreSharp.Templates.Blazor.Server.Application.Services.Contracts
+﻿namespace CoreSharp.Templates.Blazor.Server.Application.Services.Contracts;
+
+public interface IServerCurrentUserService : ICurrentUserService
 {
-    public interface IServerCurrentUserService : ICurrentUserService
-    {
-    }
 }

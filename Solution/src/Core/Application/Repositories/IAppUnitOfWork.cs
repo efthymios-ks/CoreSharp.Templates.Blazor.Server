@@ -1,10 +1,9 @@
 ﻿using CoreSharp.EntityFramework.Repositories.Interfaces;
 
-namespace CoreSharp.Templates.Blazor.Server.Application.Repositories
+namespace CoreSharp.Templates.Blazor.Server.Application.Repositories;
+
+public interface IAppUnitOfWork : IUnitOfWork
 {
-    public interface IAppUnitOfWork : IUnitOfWork
-    {
-        //Properties
-        IDummyRepository DummyRepository { get; }
-    }
+    //Properties
+    IDummyRepository DummyRepository { get; }
 }

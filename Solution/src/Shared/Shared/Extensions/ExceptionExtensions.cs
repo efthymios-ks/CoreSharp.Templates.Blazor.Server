@@ -2,21 +2,20 @@
 using System;
 using System.Diagnostics;
 
-namespace CoreSharp.Templates.Blazor.Server.Shared.Extensions
+namespace CoreSharp.Templates.Blazor.Server.Shared.Extensions;
+
+/// <summary>
+/// <see cref="Exception"/> extensions.
+/// </summary>
+public static class ExceptionExtensions
 {
     /// <summary>
-    /// <see cref="Exception"/> extensions.
+    /// Format <see cref="Exception.StackTrace"/>.
     /// </summary>
-    public static class ExceptionExtensions
+    public static Exception Format(this Exception exception)
     {
-        /// <summary>
-        /// Format <see cref="Exception.StackTrace"/>.
-        /// </summary>
-        public static Exception Format(this Exception exception)
-        {
-            _ = exception ?? throw new ArgumentNullException(nameof(exception));
+        _ = exception ?? throw new ArgumentNullException(nameof(exception));
 
-            return exception.GetInnermostException().Demystify();
-        }
+        return exception.GetInnermostException().Demystify();
     }
 }

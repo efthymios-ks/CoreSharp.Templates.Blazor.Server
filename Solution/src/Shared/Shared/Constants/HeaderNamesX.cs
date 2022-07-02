@@ -1,10 +1,9 @@
 ﻿using Microsoft.Net.Http.Headers;
 
-namespace CoreSharp.Templates.Blazor.Server.Shared.Constants
+namespace CoreSharp.Templates.Blazor.Server.Shared.Constants;
+
+/// <inheritdoc cref="HeaderNames"/>
+public static class HeaderNamesX
 {
-    /// <inheritdoc cref="HeaderNames"/>
-    public static class HeaderNamesX
-    {
-        public const string AcceptVersion = "Accept-version";
-    }
+    public const string AcceptVersion = "Accept-version";
 }

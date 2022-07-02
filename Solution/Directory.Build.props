@@ -2,5 +2,6 @@
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>1573;1591;1701;1702;1723;</NoWarn> 
+		<TargetFramework>net6.0</TargetFramework>
 	</PropertyGroup>
 </Project>

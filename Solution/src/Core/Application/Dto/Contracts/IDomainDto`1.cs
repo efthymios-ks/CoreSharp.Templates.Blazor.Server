@@ -1,8 +1,7 @@
-﻿namespace CoreSharp.Templates.Blazor.Server.Application.Dto.Contracts
+﻿namespace CoreSharp.Templates.Blazor.Server.Application.Dto.Contracts;
+
+public interface IDomainDto<TKey> : IDomainDto
 {
-    public interface IDomainDto<TKey> : IDomainDto
-    {
-        //Properties
-        public new TKey Id { get; set; }
-    }
+    //Properties
+    public new TKey Id { get; set; }
 }

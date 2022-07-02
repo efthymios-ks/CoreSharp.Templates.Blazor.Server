@@ -1,12 +1,11 @@
-﻿using CoreSharp.Templates.Blazor.Server.Application.Dto.Abstracts;
+﻿using CoreSharp.Templates.Blazor.Server.Application.Dto.Common;
 using System;
 
-namespace CoreSharp.Templates.Blazor.Server.Application.Dto
+namespace CoreSharp.Templates.Blazor.Server.Application.Dto;
+
+public class DummyDto : DomainDtoBase<Guid>
 {
-    public class DummyDto : DomainDtoBase<Guid>
-    {
-        //Properties
-        public string Name { get; set; }
-        public string Description { get; set; }
-    }
+    //Properties
+    public string Name { get; set; }
+    public string Description { get; set; }
 }

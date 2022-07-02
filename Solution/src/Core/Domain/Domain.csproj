@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup Label="Package">
-		<TargetFramework>net5.0</TargetFramework>
+		<TargetFramework>net6.0</TargetFramework>
 		<AssemblyName>CoreSharp.Templates.Blazor.Server.Domain</AssemblyName>
 		<RootNamespace>CoreSharp.Templates.Blazor.Server.Domain</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup Label="Package references">
-		<PackageReference Include="CoreSharp.EntityFramework" Version="5.1.1" />
+		<PackageReference Include="CoreSharp.EntityFramework" Version="6.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
 

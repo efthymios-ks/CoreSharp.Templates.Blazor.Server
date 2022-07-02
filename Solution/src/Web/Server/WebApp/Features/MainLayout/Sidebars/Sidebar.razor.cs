@@ -3,39 +3,38 @@ using Microsoft.AspNetCore.Components;
 using System;
 using System.Threading.Tasks;
 
-namespace WebApp.Features.MainLayout.Sidebars
+namespace WebApp.Features.MainLayout.Sidebars;
+
+public partial class Sidebar : IAsyncDisposable
 {
-    public partial class Sidebar : IAsyncDisposable
+    //Fields 
+    private ElementReference _offcanvasReference;
+
+    //Properties
+    [Inject]
+    protected OffcanvasJsWrapper OffcanvasJsWrapper { get; set; }
+
+    //Methods 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        //Fields 
-        private ElementReference _offcanvasReference;
+        await base.OnAfterRenderAsync(firstRender);
 
-        //Properties
-        [Inject]
-        protected OffcanvasJsWrapper OffcanvasJsWrapper { get; set; }
+        if (firstRender)
+            await OffcanvasJsWrapper.InitializeAsync();
+    }
 
-        //Methods 
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            await base.OnAfterRenderAsync(firstRender);
+    public async Task OpenAsync()
+        => await OffcanvasJsWrapper.ToggleAsync(_offcanvasReference);
 
-            if (firstRender)
-                await OffcanvasJsWrapper.InitializeAsync();
-        }
+    public async Task CloseAsync()
+        => await OffcanvasJsWrapper.HideAsync(_offcanvasReference);
 
-        public async Task OpenAsync()
-            => await OffcanvasJsWrapper.ToggleAsync(_offcanvasReference);
+    public async Task ToggleAsync()
+        => await OffcanvasJsWrapper.ToggleAsync(_offcanvasReference);
 
-        public async Task CloseAsync()
-            => await OffcanvasJsWrapper.HideAsync(_offcanvasReference);
-
-        public async Task ToggleAsync()
-            => await OffcanvasJsWrapper.ToggleAsync(_offcanvasReference);
-
-        public ValueTask DisposeAsync()
-        {
-            GC.SuppressFinalize(this);
-            return OffcanvasJsWrapper.DisposeAsync();
-        }
+    public ValueTask DisposeAsync()
+    {
+        GC.SuppressFinalize(this);
+        return OffcanvasJsWrapper.DisposeAsync();
     }
 }

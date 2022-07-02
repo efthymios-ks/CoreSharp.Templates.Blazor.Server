@@ -2,20 +2,19 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace WebApp.Extensions
+namespace WebApp.Extensions;
+
+/// <summary>
+/// <see cref="IWebHostBuilder"/> extensions.
+/// </summary>
+internal static class IWebHostBuilderExtensions
 {
-    /// <summary>
-    /// <see cref="IWebHostBuilder"/> extensions.
-    /// </summary>
-    internal static class IWebHostBuilderExtensions
-    {
-        public static IWebHostBuilder ConfigureAppLogging(this IWebHostBuilder builder)
-            => builder.ConfigureLogging((context, logging) =>
-            {
-                logging.ClearProviders();
-                logging.AddConfiguration(context.Configuration.GetSection("Logging"));
-                logging.AddConsole();
-                logging.AddDebug();
-            });
-    }
+    public static IWebHostBuilder ConfigureAppLogging(this IWebHostBuilder builder)
+        => builder.ConfigureLogging((context, logging) =>
+        {
+            logging.ClearProviders();
+            logging.AddConfiguration(context.Configuration.GetSection("Logging"));
+            logging.AddConsole();
+            logging.AddDebug();
+        });
 }
