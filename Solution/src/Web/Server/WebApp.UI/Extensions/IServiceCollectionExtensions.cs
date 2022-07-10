@@ -1,8 +1,6 @@
 ﻿using CoreSharp.Blazor.Extensions;
-using CoreSharp.Blazor.JavaScriptWrappers.Common;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Linq;
 using System.Reflection;
 
 namespace WebApp.UI.Extensions;
@@ -16,21 +14,8 @@ public static class IServiceCollectionExtensions
     {
         _ = services ?? throw new ArgumentNullException(nameof(services));
 
-        services.AddJavaScriptWrappers();
         services.AddCoreSharpBlazor();
-
-        return services;
-    }
-
-    private static IServiceCollection AddJavaScriptWrappers(this IServiceCollection services)
-    {
-        _ = services ?? throw new ArgumentNullException(nameof(services));
-
-        var jsWrappers = Assembly.GetExecutingAssembly()
-                                 .GetExportedTypes()
-                                 .Where(t => t.IsClass && !t.IsAbstract && t.BaseType == typeof(JsWrapperBase));
-        foreach (var jsWrapper in jsWrappers)
-            services.AddTransient(jsWrapper);
+        services.AddJavaScriptWrappers(Assembly.GetExecutingAssembly());
 
         return services;
     }
