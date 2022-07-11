@@ -3,7 +3,6 @@ using CoreSharp.Extensions;
 using CoreSharp.Templates.Blazor.Server.Application.Services.Contracts;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Claims;
@@ -30,7 +29,7 @@ public class ServerCurrentUserService : IServerCurrentUserService, IScoped<IServ
     public string Id { get; }
     public string Name { get; }
     public string Email { get; }
-    public IReadOnlyDictionary<string, string> Claims { get; } = ImmutableDictionary<string, string>.Empty;
+    public IReadOnlyDictionary<string, string> Claims { get; }
 
     //Methods 
     private static bool GetIsAuthenticated(ClaimsPrincipal claimsPrincipal)
