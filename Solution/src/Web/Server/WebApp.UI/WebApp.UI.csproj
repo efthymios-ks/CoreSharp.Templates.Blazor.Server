@@ -6,9 +6,9 @@
 	</PropertyGroup>
 
 	<ItemGroup Label="Package references">
-		<PackageReference Include="CoreSharp" Version="6.0.1" />
+		<PackageReference Include="CoreSharp" Version="6.0.2" />
 		<PackageReference Include="CoreSharp.Blazor" Version="6.1.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.6" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.7" />
 	</ItemGroup>
 
 	<ItemGroup>

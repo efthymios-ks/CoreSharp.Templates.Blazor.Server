@@ -8,11 +8,6 @@
 
 	<ItemGroup Label="Package references">
 		<PackageReference Include="CoreSharp.EntityFramework" Version="6.0.0" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	</ItemGroup>
-
-	<ItemGroup Label="Project references">
-		<ProjectReference Include="..\..\Shared\Shared\Shared.csproj" />
 	</ItemGroup>
 
 </Project>

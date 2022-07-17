@@ -12,3 +12,4 @@ Current architecture consists of four layers.
 4. `Client.Infrastructure` > `Application`. 
 4. `Client` > `Client.Infrastruture`. 
 5. `Server` > `Application`, `Infrastructure`. 
+ 

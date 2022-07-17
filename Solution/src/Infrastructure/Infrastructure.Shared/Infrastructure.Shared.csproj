@@ -6,8 +6,4 @@
 		<AssemblyName>CoreSharp.Templates.Blazor.Server.Infrastructure.Shared</AssemblyName>
 	</PropertyGroup>
 
-	<ItemGroup Label="Project references">
-		<ProjectReference Include="..\..\Core\Application\Application.csproj" />
-	</ItemGroup>
-
 </Project>

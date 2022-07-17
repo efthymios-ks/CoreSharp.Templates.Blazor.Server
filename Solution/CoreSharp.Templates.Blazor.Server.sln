@@ -34,6 +34,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "architecture", "architecture", "{C5908692-3CCF-44D1-9A11-CF77FAB0FFF4}"
 	ProjectSection(SolutionItems) = preProject
 		docs\architecture\Architecture file placement.md = docs\architecture\Architecture file placement.md
+		docs\architecture\Architecture - Diagram.png = docs\architecture\Architecture - Diagram.png
 		docs\architecture\Architecture.md = docs\architecture\Architecture.md
 		docs\architecture\Client - Run JavaScript scripts.md = docs\architecture\Client - Run JavaScript scripts.md
 		docs\architecture\EF migrations.md = docs\architecture\EF migrations.md

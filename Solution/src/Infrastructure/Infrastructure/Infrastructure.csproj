@@ -7,10 +7,9 @@
 	</PropertyGroup>
 
 	<ItemGroup Label="Package references">
-		<PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.6" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<TreatAsUsed>true</TreatAsUsed>
@@ -19,7 +18,7 @@
 
 	<ItemGroup Label="Project references">
 		<ProjectReference Include="..\..\Core\Application\Application.csproj" />
-		<ProjectReference Include="..\..\Shared\Shared\Shared.csproj" />
+		<ProjectReference Include="..\Infrastructure.Shared\Infrastructure.Shared.csproj" />
 	</ItemGroup>
 
 </Project>
